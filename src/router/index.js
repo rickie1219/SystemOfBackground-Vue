@@ -1,14 +1,66 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
+  },
+  {
+    path: '/manage',
+    name: 'Manage',
+    component: () => import('../views/Manage.vue'),
+    redirect: '/home',  // 添加这个字段，可以让 router-view 显示默认页面
+    meta: {
+      requireAuth: true // 添加该字段，表示进入这个路由是需要登录的
+    },
+    children: [
+      {
+        path: '/aside',
+        name: 'Aside',
+        component: () => import('../components/Aside.vue')
+      },
+      {
+        path: '/header',
+        name: 'Header',
+        component: () => import('../components/Header.vue')
+      },
+      {
+        path: '/home',
+        name: 'Home',
+        component: () => import('../components/Home.vue'),
+      },
+      {
+        path: '/user',
+        name: 'User',
+        component: () => import('../components/User.vue')
+      },
+      {
+        path: '/book',
+        name: 'Book',
+        component: () => import('../components/Book.vue')
+      },
+
+      {
+        path: '/hobby',
+        name: 'Hobby',
+        component: () => import('../components/Hobby.vue')
+      },
+
+      {
+        path: '/file',
+        name: 'File',
+        component: () => import('../components/File.vue')
+      },
+      {
+        path: '/setting',
+        name: 'Setting',
+        component: () => import('../components/Setting.vue')
+      }
+    ]
   },
   {
     path: '/about',
@@ -16,7 +68,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    /* webpackChunkName: "about" */
+    component: () => import('../views/About.vue')
   }
 ]
 
