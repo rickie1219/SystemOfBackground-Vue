@@ -2,6 +2,7 @@ import axios from 'axios'
 
 // 创建，初始化
 const request = axios.create({
+    // tianjian添加一行注释，修改了服务器地址为本地地址
     baseURL: 'http://localhost:8085',  // 注意！！ 这里是全局统一加上了 '/api' 前缀，也就是说所有接口都会加上'/api'前缀在，页面里面写接口的时候就不要加 '/api'了，否则会出现2个'/api'，类似 '/api/api/user'这样的报错，切记！！！
     timeout: 5000
 })
