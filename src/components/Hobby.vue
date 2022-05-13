@@ -2,6 +2,7 @@
   <div class="content-hobby">
     <h1 style="text-align: center">爱好页面</h1>
     <img class="box1" src="@/assets/logo.png" />
+    <h1>title</h1>
   </div>
 </template>
 
