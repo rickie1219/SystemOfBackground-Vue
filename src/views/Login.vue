@@ -28,9 +28,9 @@
                   v-model="inputCode"
                   clearable>
               </el-input>
-              <el-button type="primary" round @click="handleSendCode">发送验证码</el-button>
+              <el-button type="primary" round @click="changeCaptcha">发送验证码</el-button>
 <!--              <img class="login-captcha" alt="" src="/assets/captcha?t=1652684520591">-->
-              <img class="login-captcha" alt="" @click="changeCaptcha"/>
+              <img alt="" src="" @click="changeCaptcha"/>
               <div>密码：</div>
               <el-input
                   placeholder="请输入密码"
@@ -78,12 +78,11 @@ export default {
       }).then(res => {
         console.log('11111111')
         console.log(res)
-
       })
     },
-    changeCaptcha() {
+    changeCaptcha(url) {
       this.getCaptcha()
-
+      url = "/login/getCaptcha" + "?t" + (new Date()).getTime()
     },
     handleSendCode() {
       console.log('发送验证码')

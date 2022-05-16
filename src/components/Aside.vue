@@ -36,14 +36,29 @@
           <el-menu-item index="2-3" @click="clickHobbyManage">爱好管理</el-menu-item>
         </router-link>
       </el-submenu>
+      <el-submenu index="3">
+        <template slot="title">
+          <i class="el-icon-s-home"></i>
+          <span slot="title">图书管理</span>
+        </template>
+        <router-link class="nav-link " to="/user">
+          <el-menu-item index="3-1" @click="clickUserManage">借阅管理</el-menu-item>
+        </router-link>
+        <router-link class="nav-link " to="/book">
+          <el-menu-item index="3-2" @click="clickBookManage">书籍管理</el-menu-item>
+        </router-link>
+        <router-link class="nav-link " to="/book">
+          <el-menu-item index="3-3" @click="clickBookManage">报刊管理</el-menu-item>
+        </router-link>
+      </el-submenu>
       <router-link class="nav-link " to="/file">
-        <el-menu-item index="3" @click="clickFileManage">
+        <el-menu-item index="4" @click="clickFileManage">
           <i class="el-icon-document"></i>
           <span slot="title">文件管理</span>
         </el-menu-item>
       </router-link>
       <router-link class="nav-link " to="/setting">
-        <el-menu-item index="4" @click="clickSettingManage">
+        <el-menu-item index="5" @click="clickSettingManage">
           <i class="el-icon-setting"></i>
           <span slot="title">设置管理</span>
         </el-menu-item>

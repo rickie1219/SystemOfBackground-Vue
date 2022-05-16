@@ -2,6 +2,7 @@
   <div class="content-setting">
     <h1 style="text-align: center">设置页面</h1>
     <img class="box1" src="@/assets/logo.png" />
+    <h2>新的标题</h2>
   </div>
 </template>
 
