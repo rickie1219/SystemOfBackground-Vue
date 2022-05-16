@@ -29,6 +29,8 @@
                   clearable>
               </el-input>
               <el-button type="primary" round @click="handleSendCode">发送验证码</el-button>
+<!--              <img class="login-captcha" alt="" src="/assets/captcha?t=1652684520591">-->
+              <img class="login-captcha" alt="" @click="changeCaptcha"/>
               <div>密码：</div>
               <el-input
                   placeholder="请输入密码"
@@ -65,7 +67,24 @@ export default {
       fullscreenLoading: false
     }
   },
+  created() {
+    this.getCaptcha()
+  },
   methods: {
+    getCaptcha() {
+      var url = '/login/getCaptcha'
+      request(url, {
+        method: 'get'
+      }).then(res => {
+        console.log('11111111')
+        console.log(res)
+
+      })
+    },
+    changeCaptcha() {
+      this.getCaptcha()
+
+    },
     handleSendCode() {
       console.log('发送验证码')
       console.log('输入的验证码是： ' + this.inputCode)
@@ -114,8 +133,9 @@ export default {
       var url = '/login/register'
       request(url, {
         data: {
-          email: this.inputAccount,
+          accountEmail: this.inputAccount,
           password: this.inputPassword,
+          code: this.inputCode
         },
         method: 'post'
       }).then(res => {
