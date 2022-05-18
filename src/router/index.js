@@ -6,8 +6,31 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Login',
-    component: () => import('../views/Login.vue'),
+    name: 'LoginNew',
+    component: () => import('../views/LoginNew.vue'),
+    // redirect: '/phone',  // 添加这个字段，可以让 router-view 显示默认页面
+    children: [
+      {
+        path: '/phone',
+        name: 'LoginWithPhone',
+        component: () => import('../components/LoginWithPhone.vue')
+      },
+      {
+        path: '/email',
+        name: 'LoginWithEmail',
+        component: () => import('../components/LoginWithEmail.vue')
+      },
+      {
+        path: '/register',
+        name: 'LoginWithRegister',
+        component: () => import('../components/LoginWithRegister.vue')
+      },
+      {
+        path: '/forget',
+        name: 'LoginWithForget',
+        component: () => import('../components/LoginWithForget.vue')
+      }
+    ]
   },
   {
     path: '/manage',

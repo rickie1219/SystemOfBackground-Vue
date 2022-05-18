@@ -149,6 +149,13 @@ export default {
 </script>
 
 <style scoped>
+.content-login {
+  background-image: url("/src/assets/bg-login-2.png");   /* url(@/assets/bg-login-2.png);*/ /* @/assets/logo.png */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .bg-purple {
   background: #d3dce6;
 }
