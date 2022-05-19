@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    使用手机号登录
+  </div>
 </template>
 
 <script>

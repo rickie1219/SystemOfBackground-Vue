@@ -5,14 +5,14 @@
       <el-input
           class="login-account"
           placeholder="请输入手机号"
-          prefix-icon="el-icon-search"
+          prefix-icon="el-icon-mobile"
           v-model="input1">
       </el-input>
 
       <el-input
           class="login-password"
           placeholder="请输入密码"
-          prefix-icon="el-icon-search"
+          prefix-icon="el-icon-lock"
           v-model="input2">
       </el-input>
 
@@ -20,7 +20,7 @@
         <el-input
             class="login-captcha"
             placeholder="请输入验证码"
-            prefix-icon="el-icon-search"
+            prefix-icon="el-icon-chat-line-square"
             v-model="input3">
         </el-input>
         <img src="@/assets/icon-login.png" style="width: 100px; height: 50px">
